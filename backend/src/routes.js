@@ -1,7 +1,15 @@
 const express = require ('express');
-const routes = express.Router ();
-const SessionControler = require ('./controllers/SessionControler')
+const multer = require('multer');
+const uploadConfig = require('./config/upload');
 
-routes.post ('/users/', SessionControler.store);
+const SessionControler = require ('./controllers/SessionControler');
+const SpotController = require ('./controllers/SpotController');
+
+const routes = express.Router ();
+const upload = multer(uploadConfig);
+
+routes.post ('/sessions', SessionControler.store);
+
+routes.post ('/spots', upload.single("thumbnail"), SpotController.store);
 
 module.exports = routes;
