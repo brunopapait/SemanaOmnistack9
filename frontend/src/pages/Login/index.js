@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import api from '../../services/api';
 
-export default function Login( { history }) { //HISTORY = UTILIZADO PARA FAZER A NAVEGAÇÃO
+export default function Login({ history }) { //HISTORY = UTILIZADO PARA FAZER A NAVEGAÇÃO
 
     const [email, setEmail] = useState('');
 
