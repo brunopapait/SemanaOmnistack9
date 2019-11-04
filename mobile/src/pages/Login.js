@@ -22,6 +22,8 @@ export default function Login({ navigation }) {
         })
 
         const { _id } = response.data
+
+        console.log (_id);
         
         await AsyncStorage.setItem ('user', _id);
         await AsyncStorage.setItem ('techs', techs)

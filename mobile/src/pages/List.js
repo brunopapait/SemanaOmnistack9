@@ -3,7 +3,7 @@ import { SafeAreaView, AsyncStorage, StyleSheet, Image } from 'react-native';
 
 import SpotList from '../components/SpotList';
 
-import logo from '../assets/logo.png'
+import logo from '../assets/logo.png';
 
 export default function List() {
     const [techs, setTechs] = useState ([]);
@@ -20,7 +20,7 @@ export default function List() {
         <SafeAreaView style={ styles.container }>
             <Image style={ styles.logo } source ={ logo } />
 
-            <SpotList/>
+            {techs.map(tech => <SpotList key = { tech } tech = { tech } />)}
         </SafeAreaView>
     );
     
